@@ -45,7 +45,7 @@ class FastPriorityQueue<T> {
   size: number;
   compare: Comparator;
 
-  constructor(comparator: Comparator) {
+  constructor(comparator?: Comparator) {
     this.array = [];
     this.size = 0;
     this.compare = comparator || defaultcomparator;
