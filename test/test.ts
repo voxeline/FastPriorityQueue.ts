@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import { FastPriorityQueue, Item } from '../';
 
 interface TestObject {
@@ -101,5 +102,55 @@ describe('FastPriorityQueue', function() {
         array.sort((a, b) => b.priority - a.priority);
       }
     }
+  });
+
+  it('#has', () => {
+    const x = new FastPriorityQueue<TestObject>((a, b) => a < b);
+
+    const obj0 = { name: 'obj_0' };
+    const obj1 = { name: 'obj_1' };
+    const obj3 = { name: 'obj_3' };
+    const obj4 = { name: 'obj_4' };
+    const obj5 = { name: 'obj_5' };
+
+    expect(x.has(obj1)).to.equal(false);
+    x.add(obj1, 1);
+    expect(x.has(obj1)).to.equal(true);
+
+    expect(x.has(obj0)).to.equal(false);
+    x.add(obj0, 0);
+    expect(x.has(obj0)).to.equal(true);
+
+    expect(x.has(obj5)).to.equal(false);
+    x.add(obj5, 5);
+    expect(x.has(obj5)).to.equal(true);
+
+    expect(x.has(obj4)).to.equal(false);
+    x.add(obj4, 4);
+    expect(x.has(obj4)).to.equal(true);
+
+    expect(x.has(obj3)).to.equal(false);
+    x.add(obj3, 3);
+    expect(x.has(obj3)).to.equal(true);
+
+    expect(x.has(obj0)).to.equal(true);
+    x.poll();
+    expect(x.has(obj0)).to.equal(false);
+
+    expect(x.has(obj1)).to.equal(true);
+    x.poll();
+    expect(x.has(obj1)).to.equal(false);
+
+    expect(x.has(obj3)).to.equal(true);
+    x.poll();
+    expect(x.has(obj3)).to.equal(false);
+
+    expect(x.has(obj4)).to.equal(true);
+    x.poll();
+    expect(x.has(obj4)).to.equal(false);
+
+    expect(x.has(obj5)).to.equal(true);
+    x.poll();
+    expect(x.has(obj5)).to.equal(false);
   });
 });

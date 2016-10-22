@@ -121,6 +121,15 @@ class FastPriorityQueue<T> {
     return this.size == 0;
   }
 
+  public has(object: T) {
+    for (let i = 0; i < this.size; ++i) {
+      if (object === this.array[i].object) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   // for internal use
   private _percolateUp(i: number) {
     var myval = this.array[i];

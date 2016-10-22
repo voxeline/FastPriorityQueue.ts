@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "npm run build -- --watch",
-    "test": "mocha --compilers ts:ts-node/register"
+    "test": "mocha --compilers ts:ts-node/register",
+    "test:watch": "npm run test -- --watch"
   },
   "author": "Giff Song <giff.song@gmail.com>",
   "license": "ISC",
