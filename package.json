@@ -1,0 +1,22 @@
+{
+  "name": "fastpriorityqueue.ts",
+  "version": "0.1.0",
+  "description": "fastpriorityqueue written in TypeScript",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "npm run build -- --watch",
+    "test": "mocha --compilers ts:ts-node/register"
+  },
+  "author": "Giff Song <giff.song@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.32",
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "ts-node": "^1.6.0",
+    "typescript": "^2.0.3"
+  }
+}
