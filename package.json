@@ -12,6 +12,7 @@
     "test:watch": "npm run test -- --watch"
   },
   "files": [
+    "src",
     "lib"
   ],
   "author": "Giff Song <giff.song@gmail.com>",
