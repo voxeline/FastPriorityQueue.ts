@@ -122,6 +122,7 @@ class FastPriorityQueue<T> {
   }
 
   public has(object: T) {
+    // TODO: Use set for O(log n) search
     for (let i = 0; i < this.size; ++i) {
       if (object === this.array[i].object) {
         return true;
