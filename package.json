@@ -5,13 +5,17 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
+    "prepublish": "npm test && npm run build",
     "build": "tsc",
     "build:watch": "npm run build -- --watch",
     "test": "mocha --compilers ts:ts-node/register",
     "test:watch": "npm run test -- --watch"
   },
+  "files": [
+    "lib"
+  ],
   "author": "Giff Song <giff.song@gmail.com>",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@types/chai": "^3.4.34",
     "@types/mocha": "^2.2.32",
